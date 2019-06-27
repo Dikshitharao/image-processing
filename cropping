@@ -1,0 +1,15 @@
+from PIL import Image
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+print(image.size) 
+image = Image.open('minion.jpg')
+box = (210, 100, 300, 300)
+cropped_image = image.crop(box)
+cropped_image.save('cropped_image.jpg')
+img2 = cv2.imread("cropped_image.jpg")
+img2_cvt=cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
+plt.imshow(img2_cvt)
+plt.show()
