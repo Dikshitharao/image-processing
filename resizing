@@ -1,0 +1,39 @@
+from PIL import Image
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+
+image = Image.open('minion.jpg')
+image.show()
+# The file format of the source file.
+print(image.format)
+
+# The pixel format used by the image. Typical values are “1”, “L”, “RGB”, or “CMYK.”
+print(image.mode)
+
+# Image size, in pixels. The size is given as a 2-tuple (width, height).
+print(image.size)
+
+#resizing
+# Colour palette table, if any.
+print(image.palette)
+image = Image.open('minion.jpg')#specify an image from your pictures wrt png or jpg
+new_image = image.resize((400, 400))#resizing or changing the dimensions of the image to new dimensions
+
+print(image.size)#prints the old dimensions of the picture
+print(new_image.size) #prints the new dimensions of the picture
+#image = Image.open('minion.jpg')
+#image.thumbnail((400, 400))
+#image.save('image_thumbnail.jpg')
+
+
+img = cv2.imread("minion.jpg")
+img_cvt=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+plt.imshow(img_cvt)
+plt.show()
+img1 = cv2.imread("image_400.jpg")
+img1_cvt=cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
+plt.imshow(img1_cvt)
+plt.show()
