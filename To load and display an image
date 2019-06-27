@@ -1,4 +1,3 @@
-display a picture in collab:-
 
 import cv2
 import numpy as np
